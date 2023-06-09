@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "Enter the value of a:"
+read a
+
+echo "Enter the value of b:"
+read b
+
+echo "Enter the value of c:"
+read c
+
+echo "Before swapping: a=$a, b=$b, c=$c"
+
+# Swapping the values in a cyclic manner
+temp=$a
+a=$b
+b=$c
+c=$temp
+
+echo "After swapping: a=$a, b=$b, c=$c"

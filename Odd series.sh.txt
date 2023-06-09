@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Enter the value of n:"
+read n
+
+echo "Odd number series from 1 to $n:"
+
+num=1
+
+while [ $num -le $n ]
+do
+  echo $num
+  num=$((num+2))
+done

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "Enter the value of x in radians:"
+read x
+
+echo "Enter the number of terms in the series:"
+read terms
+
+result=0
+power=$x
+fact=1
+sign=1
+
+for (( i=1; i<=terms; i++ ))
+do
+    term=$(bc -l <<< "scale=10; $power / $fact * $sign")
+    result=$(bc -l <<< "scale=10; $result + $term")
+
+    power=$(bc -l <<< "$power * $x * $x")
+    fact=$(bc -l <<< "$fact * ($i * 2) * ($i * 2 + 1)")
+    sign=$(bc <<< "$sign * -1")
+done
+
+echo "The sine of $x is approximately: $result"

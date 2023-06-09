@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "Enter the value of n:"
+read n
+
+echo "Fibonacci series up to $n:"
+
+# Initialize variables
+num1=0
+num2=1
+
+# Print the first two numbers in the series
+echo $num1
+echo $num2
+
+# Generate the Fibonacci series
+while [ $num2 -le $n ]
+do
+  next=$((num1 + num2))
+  echo $next
+  num1=$num2
+  num2=$next
+done

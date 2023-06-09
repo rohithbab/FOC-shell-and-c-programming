@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Function to perform linear search
+linear_search() {
+    # Input parameters:
+    # $1: The element to search for
+    # $2: The array to search in
+
+    element=$1
+    array=("${@:2}")
+
+    # Iterate over each element in the array
+    for ((i=0; i<${#array[@]}; i++))
+    do
+        # Check if the current element matches the search element
+        if [ ${array[i]} -eq $element ]; then
+            echo "Element found at index $i"
+            return
+        fi
+    done
+
+    # If the element is not found
+    echo "Element not found in the array"
+}
+
+# Example usage
+elements=(4 2 9 7 5)
+search_element=9
+
+linear_search $search_element "${elements[@]}"

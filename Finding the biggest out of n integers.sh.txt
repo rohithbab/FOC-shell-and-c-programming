@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "Enter the total count of numbers:"
+read count
+
+# Initialize the maximum number to the smallest possible value
+max=-999999
+
+for (( i=1; i<=count; i++ ))
+do
+    echo "Enter number $i:"
+    read num
+
+    # Check if the current number is greater than the current maximum
+    if [ $num -gt $max ]; then
+        max=$num
+    fi
+done
+
+echo "The biggest number is: $max"

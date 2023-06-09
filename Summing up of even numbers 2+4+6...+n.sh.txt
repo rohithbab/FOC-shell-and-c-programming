@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Enter the value of n:"
+read n
+
+sum=0
+
+echo "Even number series from 2 to $n:"
+
+for (( i=2; i<=n; i+=2 ))
+do
+  echo $i
+  sum=$((sum + i))
+done
+
+echo "Sum of the even number series is: $sum"

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Enter a positive integer:"
+read n
+
+factorial=1
+
+if [ $n -lt 0 ]; then
+    echo "Error: Invalid input. The number must be a positive integer."
+    exit 1
+fi
+
+for (( i=1; i<=n; i++ ))
+do
+    factorial=$((factorial * i))
+done
+
+echo "Factorial of $n is: $factorial"

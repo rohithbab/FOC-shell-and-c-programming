@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Enter the count of numbers:"
+read count
+
+sum=0
+
+echo "Enter $count numbers:"
+
+for (( i=1; i<=count; i++ ))
+do
+    read number
+    sum=$((sum + number))
+done
+
+average=$(echo "scale=2; $sum / $count" | bc)
+
+echo "Sum of the numbers: $sum"
+echo "Average of the numbers: $average"
